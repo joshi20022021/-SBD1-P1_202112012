@@ -1,7 +1,7 @@
 # Manual Técnico
 
 ## Esquema Conceptual
-![Descripción de la imagen](https://i.ibb.co/qMRXFPzg)
+![Descripción de la imagen](https://ibb.co/qMRXFPzg)
 
 
 ## Esquema Lógico
