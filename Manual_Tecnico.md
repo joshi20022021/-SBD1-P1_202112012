@@ -12,6 +12,8 @@ Se identificaron las siguientes tablas con sus respectivos atributos.
 | 6  | envios               | id, fecha_despacho, orden_id, direccion_entrega, **empresa_transporte**, numero_seguimiento, estado (en tránsito/entregado/devuelto), created_at, updated_at                                             |
 | 7  | devoluciones         | id, orden_id, producto_id, fecha_solicitud, motivo, estado (en revisión/aprobada/rechazada), created_at, updated_at                                                                                     |
 | 8  | traslados            | id, fecha_movimiento, almacen_origen, almacen_destino, **lista_productos** (producto_id, cantidad), estado, fecha_estimada_llegada, created_at, updated_at                                              |
+
+
 Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hasta la forma 3FN de la base de datos asi como de sus relaciones entre cada tabla, la destruccion de las relaciones muchos a muchos de ciertas entidades.
 
 ## Esquema Conceptual
