@@ -51,10 +51,228 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 
 
 ## Descripción de las tablas
+### 1. Categoria
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Categoria | INTEGER (PK) |
+| Nombre       | VARCHAR2(50) |
+| created_at   | TIMESTAMP(0) |
+| updated_at   | TIMESTAMP(0) |
 
-| Tabla  | Atributo  | Tipo de Dato  | Descripción  |
-|--------|----------|--------------|--------------|
-|        |          |              |              |
+---
+
+### 2. Departamento
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Departamento | INTEGER (PK) |
+| Nombre          | VARCHAR2(100) |
+| created_at      | TIMESTAMP(0) |
+| updated_at      | TIMESTAMP(0) |
+
+---
+
+### 3. Detalle_Orden
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Detalle            | INTEGER (PK) |
+| Productos_Id_Producto | INTEGER (FK) |
+| Ordenes_Id_Orden      | INTEGER (FK) |
+| Total                 | NUMBER(10,2) |
+| Precio                | NUMBER(10,2) |
+| created_at            | TIMESTAMP |
+| updated_at            | TIMESTAMP |
+
+---
+
+### 4. Detalle_Traslados
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Traslado           | INTEGER (PK) |
+| Cantidad              | INTEGER |
+| created_at            | TIMESTAMP(0) |
+| updated_at            | TIMESTAMP(0) |
+| Traslados_Id_Traslado | INTEGER (FK) |
+| Productos_Id_Producto | INTEGER (FK) |
+
+---
+
+### 5. Devoluciones
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Devolucion         | INTEGER (PK) |
+| Fecha_Solicitud       | TIMESTAMP |
+| Motivo                | CLOB |
+| Estado                | VARCHAR2(50) |
+| created_at            | TIMESTAMP(0) |
+| updated_at            | TIMESTAMP(0) |
+| Ordenes_Id_Orden      | INTEGER (FK) |
+| Productos_Id_Producto | INTEGER (FK) |
+
+---
+
+### 6. Direccion
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Direccion        | INTEGER (PK) |
+| Address             | VARCHAR2(150) |
+| created_at          | TIMESTAMP(0) |
+| updated_at          | TIMESTAMP(0) |
+| Usuarios_Id_Usuario | INTEGER (FK) |
+
+---
+
+### 7. Envios
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Envio                      | INTEGER (PK) |
+| Fecha_Despacho                | TIMESTAMP(0) |
+| Compania                      | VARCHAR2(100) |
+| NumeroEnvio                   | VARCHAR2(20) |
+| Estado                        | VARCHAR2(20) |
+| created_at                    | TIMESTAMP(0) |
+| updated_at                    | TIMESTAMP(0) |
+| Ordenes_Id_Orden              | INTEGER (FK) |
+| Direccion_Usuarios_Id_Usuario | INTEGER (FK) |
+| Direccion_Id_Direccion        | INTEGER (FK) |
+
+---
+
+### 8. ImagenProducto
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Imagen             | INTEGER (PK) |
+| UrlImagen             | VARCHAR2(500) |
+| created_at            | TIMESTAMP(0) |
+| updated_at            | TIMESTAMP(0) |
+| Productos_Id_Producto | INTEGER (FK) |
+
+---
+
+### 9. Inventario
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Inventario         | INTEGER (PK) |
+| Cantidad              | INTEGER |
+| created_at            | TIMESTAMP(0) |
+| updated_at            | TIMESTAMP(0) |
+| Sede_Id_Sede          | INTEGER (FK) |
+| Productos_Id_Producto | INTEGER (FK) |
+
+---
+
+### 10. Metodo_Pago
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_MetodoPago       | INTEGER (PK) |
+| Tipo_Pago           | VARCHAR2(50) |
+| Detalles_Pago       | VARCHAR2(100) |
+| created_at          | DATE |
+| updated_at          | DATE |
+| Usuarios_Id_Usuario | INTEGER (FK) |
+
+---
+
+### 11. Ordenes
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Orden            | INTEGER (PK) |
+| Estado              | VARCHAR2(50) |
+| Pagos_Id_Pago       | INTEGER (FK) |
+| created_at          | TIMESTAMP |
+| updated_at          | TIMESTAMP |
+| Sede_Id_Sede        | INTEGER (FK) |
+| Usuarios_Id_Usuario | INTEGER (FK) |
+
+---
+
+### 12. Pagos
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Pago                   | INTEGER (PK) |
+| Fecha_Transaccion         | TIMESTAMP |
+| Monto                     | NUMBER(10,2) |
+| Metodo_Pago               | VARCHAR2(50) |
+| Estado_Pago               | VARCHAR2(50) |
+| created_at                | TIMESTAMP(0) |
+| updated_at                | TIMESTAMP(0) |
+| Metodo_Pago_Id_MetodoPago | INTEGER (FK) |
+
+---
+
+### 13. Productos
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Producto            | INTEGER (PK) |
+| Sku                    | VARCHAR2(50) |
+| Nombre                 | VARCHAR2(150) |
+| Descripcion            | VARCHAR2(500) |
+| Precio                 | NUMBER(10,2) |
+| Slug                   | VARCHAR2(150) |
+| Activo                 | VARCHAR2(20) |
+| created_at             | TIMESTAMP(0) |
+| updated_at             | TIMESTAMP(0) |
+| Categoria_Id_Categoria | INTEGER (FK) |
+
+---
+
+### 14. Sede
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Sede    | INTEGER (PK) |
+| Nombre     | VARCHAR2(100) |
+| Ubicacion  | VARCHAR2(150) |
+| created_at | TIMESTAMP(0) |
+| updated_at | TIMESTAMP(0) |
+
+---
+
+### 15. Trabajadores
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Trabajador                | INTEGER (PK) |
+| Identificacion_Nacional      | VARCHAR2(20) |
+| Nombre                       | VARCHAR2(100) |
+| Apellido                     | VARCHAR2(100) |
+| Cargo                        | VARCHAR2(100) |
+| Telefono                     | VARCHAR2(15) |
+| Email_Institucional          | VARCHAR2(50) |
+| Activo                       | VARCHAR2(50) |
+| created_at                   | TIMESTAMP(0) |
+| updated_at                   | TIMESTAMP(0) |
+| Departamento_Id_Departamento | INTEGER (FK) |
+| Sede_Id_Sede                 | INTEGER (FK) |
+
+---
+
+### 16. Traslados
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Traslado      | INTEGER (PK) |
+| Fecha_Movimiento | TIMESTAMP(0) |
+| Origen           | INTEGER |
+| Destino          | INTEGER |
+| Estado           | VARCHAR2(20) |
+| Fecha_Llegada    | TIMESTAMP(0) |
+| created_at       | TIMESTAMP(0) |
+| updated_at       | TIMESTAMP(0) |
+
+---
+
+### 17. Usuarios
+| Atributo   | Tipo de Dato  |
+|------------|--------------|
+| Id_Usuario              | INTEGER (PK) |
+| Identificacion_Nacional | VARCHAR2(20) |
+| Nombre                  | VARCHAR2(100) |
+| Apellido                | VARCHAR2(100) |
+| Telefono                | VARCHAR2(50) |
+| Email                   | VARCHAR2(255) |
+| contraseña              | VARCHAR2(100) |
+| Activo                  | NUMBER(1) |
+| Correo_Confirmado       | NUMBER(1) |
+| created_at              | TIMESTAMP(0) |
+| updated_at              | TIMESTAMP(0) |
+
 
 ## Descripción de la API
 
