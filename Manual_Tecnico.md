@@ -37,7 +37,7 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 
 
 ## Esquema Conceptual
-![Descripción de la imagen](https://ibb.co/qMRXFPzg)
+<img src="diagramas/conceptual.png" alt="Diagrama conceptual" width="800" height="600" />
 
 
 ## Esquema Lógico
