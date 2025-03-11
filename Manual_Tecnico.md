@@ -39,11 +39,12 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ## Esquema Conceptual
 <img src="diagramas/conceptual.png" alt="Diagrama conceptual" width="1000" height="600" />
 
-
 ## Esquema Lógico
-
+<img src="diagramas/DiagramaLogico.png" alt="Diagrama logico" width="1000" height="600" />
 
 ## Esquema Físico
+<img src="diagramas/DiagramaFisico.png" alt="Diagrama fisico" width="1000" height="600" />
+
 
 
 ## Fases del proceso de normalización, hasta forma normal 3
