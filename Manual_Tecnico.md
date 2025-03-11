@@ -52,6 +52,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 
 ## Descripción de las tablas
 ### 1. Categoria
+Relación uno a muchos con Productos (un producto pertenece a una categoría).
+    
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Categoria | INTEGER (PK) |
@@ -62,6 +64,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 2. Departamento
+Relación uno a muchos con Trabajadores (un trabajador pertenece a un departamento).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Departamento | INTEGER (PK) |
@@ -72,6 +76,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 3. Detalle_Orden
+Relación muchos a uno con Ordenes (cada detalle pertenece a una orden).
+Relación muchos a uno con Productos (cada detalle corresponde a un producto específico).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Detalle            | INTEGER (PK) |
@@ -85,6 +92,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 4. Detalle_Traslados
+Relación muchos a uno con Traslados (cada detalle pertenece a un traslado).
+Relación muchos a uno con Productos (cada detalle está asociado a un producto trasladado).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Traslado           | INTEGER (PK) |
@@ -97,6 +107,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 5. Devoluciones
+Relación muchos a uno con Ordenes (cada devolución está asociada a una orden).
+Relación muchos a uno con Productos (cada devolución está relacionada con un producto).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Devolucion         | INTEGER (PK) |
@@ -111,6 +124,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 6. Direccion
+Relación muchos a uno con Usuarios (cada dirección pertenece a un usuario).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Direccion        | INTEGER (PK) |
@@ -122,6 +137,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 7. Envios
+Relación muchos a uno con Ordenes (cada envío pertenece a una orden).
+Relación uno a uno con Direccion (cada envío se realiza a una dirección específica).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Envio                      | INTEGER (PK) |
@@ -138,6 +156,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 8. ImagenProducto
+Relación muchos a uno con Productos (un producto puede tener múltiples imágenes).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Imagen             | INTEGER (PK) |
@@ -149,6 +169,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 9. Inventario
+Relación muchos a uno con Sede (cada registro de inventario pertenece a una sede específica).
+Relación muchos a uno con Productos (cada registro de inventario se refiere a un producto).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Inventario         | INTEGER (PK) |
@@ -161,6 +184,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 10. Metodo_Pago
+Relación muchos a uno con Usuarios (cada usuario puede tener múltiples métodos de pago).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_MetodoPago       | INTEGER (PK) |
@@ -173,6 +198,10 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 11. Ordenes
+Relación muchos a uno con Pagos (cada orden tiene un pago asociado).
+Relación muchos a uno con Sede (cada orden se gestiona en una sede específica).
+Relación muchos a uno con Usuarios (cada orden es realizada por un usuario).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Orden            | INTEGER (PK) |
@@ -186,6 +215,8 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 12. Pagos
+Relación muchos a uno con Metodo_Pago (cada pago utiliza un método de pago específico).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Pago                   | INTEGER (PK) |
@@ -200,6 +231,13 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 13. Productos
+Relación muchos a uno con Categoria (cada producto pertenece a una categoría).
+Relación uno a muchos con Detalle_Orden (un producto puede aparecer en múltiples órdenes).
+Relación uno a muchos con Detalle_Traslados (un producto puede estar en múltiples traslados).
+Relación uno a muchos con ImagenProducto (un producto puede tener varias imágenes).
+Relación uno a muchos con Inventario (un producto puede estar en múltiples registros de inventario).
+Relación uno a muchos con Devoluciones (un producto puede tener múltiples devoluciones).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Producto            | INTEGER (PK) |
@@ -216,6 +254,10 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 14. Sede
+Relación uno a muchos con Inventario (una sede tiene múltiples registros de inventario).
+Relación uno a muchos con Trabajadores (una sede tiene múltiples trabajadores).
+Relación uno a muchos con Ordenes (una sede gestiona múltiples órdenes).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Sede    | INTEGER (PK) |
@@ -227,6 +269,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 15. Trabajadores
+Relación muchos a uno con Departamento (cada trabajador pertenece a un departamento).
+Relación muchos a uno con Sede (cada trabajador está asignado a una sede).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Trabajador                | INTEGER (PK) |
@@ -245,6 +290,9 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 16. Traslados
+Relación uno a muchos con Detalle_Traslados (un traslado puede contener múltiples productos).
+Relación uno a uno consigo mismo mediante Origen y Destino (un traslado se realiza de una sede a otra).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Traslado      | INTEGER (PK) |
@@ -259,6 +307,10 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ---
 
 ### 17. Usuarios
+Relación uno a muchos con Ordenes (un usuario puede realizar múltiples órdenes).
+Relación uno a muchos con Metodo_Pago (un usuario puede tener múltiples métodos de pago).
+Relación uno a muchos con Direccion (un usuario puede tener múltiples direcciones registradas).
+
 | Atributo   | Tipo de Dato  |
 |------------|--------------|
 | Id_Usuario              | INTEGER (PK) |
