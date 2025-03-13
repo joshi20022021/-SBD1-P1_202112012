@@ -50,33 +50,33 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ## Fases del proceso de normalización, hasta forma normal 3
 ## Primera Forma Normal (1FN): para la primera forma se deben eliminar los grupos duplicados de datos o repetitivos
 
-**Usuarios:** : Los atributos `direcciones` y `metodos_pago_preferidos` contenían múltiples valores en un solo campo.
-**Órdenes:** : El atributo `lista_productos` almacenaba productos con sus cantidades y precios de forma agrupada.
-**Traslados:**  : El atributo `lista_productos_trasladados` tenía varios productos y cantidades juntos.
+### **Usuarios:** : Los atributos `direcciones` y `metodos_pago_preferidos` contenían múltiples valores en un solo campo.
+### **Órdenes:** : El atributo `lista_productos` almacenaba productos con sus cantidades y precios de forma agrupada.
+### **Traslados:**  : El atributo `lista_productos_trasladados` tenía varios productos y cantidades juntos.
 
-**Para Usuarios:**  Se crearon las tablas `Direccion` y `Metodo_Pago`. y Se eliminó la agrupación de datos en `direcciones` y `metodos_pago_preferidos`.
-**Para Órdenes:**  Se creó la tabla `Detalle_Orden`. Se eliminó la lista de productos agrupados.
-**Para Traslados** Se creó la tabla `Detalle_Traslados`.
+### **Para Usuarios:**  Se crearon las tablas `Direccion` y `Metodo_Pago`. y Se eliminó la agrupación de datos en `direcciones` y `metodos_pago_preferidos`.
+### **Para Órdenes:**  Se creó la tabla `Detalle_Orden`. Se eliminó la lista de productos agrupados.
+### **Para Traslados** Se creó la tabla `Detalle_Traslados`.
 
 ## 2. Segunda Forma Normal (2FN): En esta es eliminar dependencias parciales, es decir, que ningún atributo dependa solo de una parte de una clave compuesta.
 
-**Productos**: El atributo `cantidad_inventario_por_sede` dependía de `id` y `sede_id`, y no de toda la clave primaria.
+### **Productos**: El atributo `cantidad_inventario_por_sede` dependía de `id` y `sede_id`, y no de toda la clave primaria.
 Se creó la tabla `Inventario` con clave compuesta: `(Sede_Id_Sede, Productos_Id_Producto)`.
-**Trabajadores**: El atributo `departamento` dependía únicamente de `id_trabajador`.
+### **Trabajadores**: El atributo `departamento` dependía únicamente de `id_trabajador`.
 Se creó la tabla `Departamento`.
 
-**Pagos**: El atributo `metodo_pago` dependía parcialmente de `id_pago`.
+### **Pagos**: El atributo `metodo_pago` dependía parcialmente de `id_pago`.
 Se creó la tabla `Metodo_Pago` (además de la ya creada en 1FN para usuarios).
 
 ## 3. Tercera Forma Normal (3FN): Eliminar dependencias transitivas, de forma que ningún atributo no clave dependa de otro atributo no clave.
 
-**Productos**: El atributo `categoria` dependía de `id_producto` pero no era parte de la clave primaria.
+### **Productos**: El atributo `categoria` dependía de `id_producto` pero no era parte de la clave primaria.
 Se creó la tabla `Categoria`.
 
-**Trabajadores**: El atributo `sede_asignada` dependía de `id_trabajador` sin ser parte de la clave.
+### **Trabajadores**: El atributo `sede_asignada` dependía de `id_trabajador` sin ser parte de la clave.
 Se creó la tabla `Sede`.
 
-**Envíos**: El atributo `direccion_entrega` dependía de `id_envio` pero no era clave.
+### **Envíos**: El atributo `direccion_entrega` dependía de `id_envio` pero no era clave.
 Se relacionó con la tabla `Direccion` utilizando claves foráneas compuestas`Envios(Direccion_Id_Direccion, Direccion_Usuarios_Id_Usuario)`.
 
 ## Descripción de las tablas
