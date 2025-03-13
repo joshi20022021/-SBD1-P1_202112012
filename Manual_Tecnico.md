@@ -50,7 +50,6 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 ## Fases del proceso de normalización, hasta forma normal 3
 ## Primera Forma Normal (1FN): para la primera forma se deben eliminar los grupos duplicados de datos o repetitivos
 
-### Tablas Originales con Problemas de Atomicidad:
 **Usuarios:** : Los atributos `direcciones` y `metodos_pago_preferidos` contenían múltiples valores en un solo campo.
 **Órdenes:** : El atributo `lista_productos` almacenaba productos con sus cantidades y precios de forma agrupada.
 **Traslados:**  : El atributo `lista_productos_trasladados` tenía varios productos y cantidades juntos.
