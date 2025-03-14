@@ -355,6 +355,29 @@ Relación uno a muchos con Direccion (un usuario puede tener múltiples direccio
 | updated_at              | TIMESTAMP(0) |
 
 
+##Descripcion de las relaciones entre tablas
+| **Relación**                     | **Tipo** | **Descripción**                                                                 |
+|----------------------------------|----------|---------------------------------------------------------------------------------|
+| **Usuarios** ↔ **Direccion**      | 1:N      | Un usuario puede tener múltiples direcciones, pero cada dirección pertenece a un solo usuario. |
+| **Usuarios** ↔ **Metodo_Pago**    | 1:N      | Un usuario puede registrar múltiples métodos de pago, pero cada método está vinculado a un solo usuario. |
+| **Usuarios** ↔ **Ordenes**        | 1:N      | Un usuario puede tener múltiples órdenes, pero cada orden pertenece a un único usuario. |
+| **Productos** ↔ **Categoria**     | N:1      | Varios productos pueden pertenecer a una categoría, pero cada producto tiene una única categoría. |
+| **Productos** ↔ **Inventario**    | 1:N      | Un producto puede estar en múltiples sedes (inventario), pero cada registro de inventario corresponde a un único producto. |
+| **Ordenes** ↔ **Detalle_Orden**   | 1:N      | Una orden puede contener múltiples productos (detalles), pero cada detalle pertenece a una única orden. |
+| **Traslados** ↔ **Detalle_Traslados** | 1:N | Un traslado puede incluir múltiples productos, pero cada detalle de traslado está vinculado a un único traslado. |
+| **Sede** ↔ **Inventario**         | 1:N      | Una sede puede tener múltiples productos en inventario, pero cada registro de inventario corresponde a una única sede. |
+| **Trabajadores** ↔ **Departamento** | N:1    | Varios trabajadores pueden pertenecer a un departamento, pero cada trabajador está asignado a un único departamento. |
+| **Trabajadores** ↔ **Sede**        | N:1      | Varios trabajadores pueden estar asignados a una sede, pero cada trabajador tiene una única sede asignada. |
+| **Pagos** ↔ **Metodo_Pago**        | N:1      | Varios pagos pueden usar el mismo método de pago, pero cada pago está vinculado a un único método. |
+| **Pagos** ↔ **Ordenes**            | 1:1      | Cada pago está asociado a una única orden, y cada orden tiene un único pago vinculado. |
+| **Envios** ↔ **Direccion**         | N:1      | Un envío está vinculado a una dirección específica, pero una dirección puede usarse en múltiples envíos. |
+| **Envios** ↔ **Ordenes**           | 1:1      | Cada envío corresponde a una única orden, y cada orden tiene un único envío asociado. |
+| **Devoluciones** ↔ **Ordenes**     | N:1      | Pueden existir múltiples devoluciones para una orden, pero cada devolución está vinculada a una única orden. |
+| **Devoluciones** ↔ **Productos**   | N:1      | Una devolución puede involucrar múltiples productos, pero cada registro de devolución está vinculado a un único producto. |
+| **Traslados** ↔ **Sede (Origen)**  | N:1      | Un traslado tiene un único almacén de origen, pero un almacén puede ser origen en múltiples traslados. |
+| **Traslados** ↔ **Sede (Destino)** | N:1      | Un traslado tiene un único almacén de destino, pero un almacén puede ser destino en múltiples traslados. |
+| **Productos** ↔ **ImagenProducto** | 1:N      | Un producto puede tener múltiples imágenes asociadas, pero cada imagen pertenece a un único producto. |
+
 ## Descripción de la API
 
 
