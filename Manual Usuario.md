@@ -136,13 +136,13 @@ python api.py
 en la parte de abajo aparecera el enlace del puerto al que esta conectado, tomarlo en cuenta para los siguientes pasos
 
 ### 5. Probar en Postman
--abre postman en tu computadora si no lo tienes lo puedes descargar aca: Descargar postman desde [POSTMAN](https://www.postman.com/downloads/)
--Seleccionar en new 
--Seleccionar la opcion de HTTP
--Posteriormente seleccion en body
--Luego seleccionar RAW
--En la parte de cuadro para ingresar texto donde aparece normalmente como GET seleccionar y cambiar a post y colocar la siguiente
-direccion: tomar en cuenta que esta automaticamente lo activa la api copiar ese enlace que aparecera en la parte de abajo de la consola de visual y pegarlo en ese apartado
+- abre postman en tu computadora si no lo tienes lo puedes descargar aca: Descargar postman desde [POSTMAN](https://www.postman.com/downloads/)
+- Seleccionar en new 
+- Seleccionar la opcion de HTTP
+- Posteriormente seleccionar en body
+- Luego seleccionar RAW
+- En la parte de cuadro para ingresar texto donde aparece normalmente como GET seleccionar y cambiar a post y colocar la siguiente
+  direccion: tomar en cuenta que esta automaticamente lo activa la api copiar ese enlace que aparecera en la parte de abajo de la consola de visual y pegarlo en ese apartado
 - **POST** `http://127.0.0.1:5000/api/users`
 - posteriormente en el cuadro mas grande se ingresar una peticion de la API como en este caso se procedera a cargar un usuario
 - **Body (JSON):**
