@@ -68,15 +68,18 @@ Descargar SQL Developer desde [Oracle SQL Developer](https://www.oracle.com/tool
 
 ### en la parte izquierda se encuentra la base de datos del proyecto en donde se le da en la carpeta de tablas clic derecho
 y en refrescar para que puedan aparecer las tablas
+
 ![](img/vertablas.png)
 
 ### OJO(si aun no se cargaron todas las tablas hay que volver a seleccionar el boton de la hoja y el boton de play y nuevamente
 refrescar esto puede hacerse hasta que aparezcan todas las tablas con ello ya tendremos la base de datos funcional)
+
 ![](img/tablasfin.png)
 
 ## Levantar la API con Flask y cx_Oracle
 
 ### Abrir visual studio code en tu sistema y aparecera de la siguiente manera
+
 ![](img/visualapi.png)
 
 ### 1. Crear entorno virtual e instalar dependencias en visual studio code 
@@ -86,16 +89,7 @@ source venv/bin/activate  # En Windows usar: venv\Scripts\activate
 pip install flask cx_Oracle bcrypt
 ```
 
-### 2. Configurar la conexión a Oracle en `db_connection.py`
-```python
-import cx_Oracle
-
-def get_connection():
-    dsn = cx_Oracle.makedsn("localhost", 1521, service_name="XEPDB1")
-    return cx_Oracle.connect(user="system", password="oracle", dsn=dsn)
-```
-
-### 3. buscar el archivo API.py tendra el siguiente codigo(se uso una parte como base)
+### 2. buscar el archivo API.py tendra el siguiente codigo(se uso una parte como base)
 ```python
 from flask import Flask, request, jsonify
 import cx_Oracle
@@ -136,10 +130,11 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-### 4. Levantar la API
+### 3. Levantar la API
 ```bash
 python api.py
 ```
+en la parte de abajo aparecera el enlace del puerto al que esta conectado, tomarlo en cuenta para los siguientes pasos
 
 ### 5. Probar en Postman
 -abre postman en tu computadora si no lo tienes lo puedes descargar aca: Descargar postman desde [POSTMAN](https://www.postman.com/downloads/)
