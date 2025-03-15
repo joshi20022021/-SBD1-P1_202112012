@@ -7,12 +7,13 @@
 
 ## 🏥 **MANUAL DE USUARIO**  
 ---
-Para poder levantar el proyecto se requiere lo siguiente:
--Instalar Oracle Database XE 
--Instalar SQL Developer 
--POSTMAN
--Cargar la base de datos a SQL
--levantar la API
+
+#Para poder levantar el proyecto se requiere lo siguiente:
+##-Instalar Oracle Database XE 
+##-Instalar SQL Developer 
+##-POSTMAN
+##-Cargar la base de datos a SQL
+##-levantar la API
 
 # Instalación y Configuración de Oracle Database XE, SQL Developer y API Flask
 
@@ -141,7 +142,15 @@ python api.py
 ```
 
 ### 5. Probar en Postman
+-abre postman en tu computadora si no lo tienes lo puedes descargar aca: Descargar postman desde [POSTMAN](https://www.postman.com/downloads/)
+-Seleccionar en new 
+-Seleccionar la opcion de HTTP
+-Posteriormente seleccion en body
+-Luego seleccionar RAW
+-En la parte de cuadro para ingresar texto donde aparece normalmente como GET seleccionar y cambiar a post y colocar la siguiente
+direccion: tomar en cuenta que esta automaticamente lo activa la api copiar ese enlace que aparecera en la parte de abajo de la consola de visual y pegarlo en ese apartado
 - **POST** `http://127.0.0.1:5000/api/users`
+- posteriormente en el cuadro mas grande se ingresar una peticion de la API como en este caso se procedera a cargar un usuario
 - **Body (JSON):**
 ```json
 {
@@ -153,4 +162,8 @@ python api.py
     "password": "claveSegura123"
 }
 ```
+-debe quedar de esta forma
+![](img/postman1.png)
+-luego seleccionar en SEND en el apartado derecho y debera aparecer que el usuario fue agregado con exito
+
 ```markdown
