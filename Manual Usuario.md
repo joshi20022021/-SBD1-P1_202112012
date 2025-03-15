@@ -56,6 +56,16 @@ Descargar SQL Developer desde [Oracle SQL Developer](https://www.oracle.com/tool
   - **Puerto:** `1521`
   - **SID/Service Name:** `XEPDB1`
 
+### configuracion del servidor creado
+![](img/sqlserver.png)
+
+### configuracion del servidor creado
+![](img/sqlserver.png)
+
+### posteriormente se procede a cargar la base de datos en el apartado de PROYECTO1 
+![](img/cargardb.png)
+
+
 ## Levantar la API con Flask y cx_Oracle
 
 ### 1. Crear entorno virtual e instalar dependencias
