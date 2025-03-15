@@ -11,9 +11,9 @@
 #Para poder levantar el proyecto se requiere lo siguiente:
 ##-Instalar Oracle Database XE 
 ##-Instalar SQL Developer 
-##-POSTMAN
 ##-Cargar la base de datos a SQL
 ##-levantar la API
+##-POSTMAN
 
 # Instalación y Configuración de Oracle Database XE, SQL Developer y API Flask
 
@@ -71,8 +71,7 @@ y en refrescar para que puedan aparecer las tablas
 
 ![](img/vertablas.png)
 
-### OJO(si aun no se cargaron todas las tablas hay que volver a seleccionar el boton de la hoja y el boton de play y nuevamente
-refrescar esto puede hacerse hasta que aparezcan todas las tablas con ello ya tendremos la base de datos funcional)
+### OJO(si aun no se cargaron todas las tablas hay que volver a seleccionar el boton de la hoja y el boton de play y nuevamente refrescar esto puede hacerse hasta que aparezcan todas las tablas con ello ya tendremos la base de datos funcional)
 
 ![](img/tablasfin.png)
 
@@ -85,7 +84,7 @@ refrescar esto puede hacerse hasta que aparezcan todas las tablas con ello ya te
 ### 1. Crear entorno virtual e instalar dependencias en visual studio code 
 ```bash
 python -m venv venv
-source venv/bin/activate  # En Windows usar: venv\Scripts\activate
+source venv/bin/activate  
 pip install flask cx_Oracle bcrypt
 ```
 
