@@ -1,4 +1,13 @@
-# Manual Técnico
+# 📌 Universidad de San Carlos de Guatemala  
+### 🏛 Facultad de Ingeniería - Escuela de Ciencias y Sistemas  
+### 🖥 LABORATORIO SISTEMAS DE BASES DE DATOS 1 Sección B
+
+## 👤 Nombre: **Edgar Josías Cán Ajquejay**  
+## 🎓 Carnet: **202112012**  
+
+## 🏥 **Manual Técnico**  
+
+### Identificacion de las tablas
 
 Se identificaron las siguientes tablas con sus respectivos atributos.
 
