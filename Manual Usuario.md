@@ -75,7 +75,7 @@ y en refrescar para que puedan aparecer las tablas
 
 ![](img/tablasfin.png)
 
-## Levantar la API con Flask y cx_Oracle
+## Levantar la API con Flask y cx_Oracle y cargar datos por medio de Python
 
 ### Abrir visual studio code en tu sistema y aparecera de la siguiente manera
 
@@ -87,8 +87,15 @@ python -m venv venv
 source venv/bin/activate  
 pip install flask cx_Oracle bcrypt
 ```
+### 2. En la parte izquierda en la carpeta de CARGAS aparecen varios archivos.py a cada uno hay que cargarlos por ejemplo en usuarios.py
 
-### 2. buscar el archivo API.py tendra el siguiente codigo(se uso una parte como base)
+![](img/cargarsql.png)
+
+### 3. En la parte superior derecha aparece un simbolo de play se le da clic y automaticamente cargara los datos a la base de datos SQL
+![](img/cargarsql2.png)
+
+
+### 4. buscar el archivo API.py tendra el siguiente codigo(se uso una parte como base)
 ```python
 from flask import Flask, request, jsonify
 import cx_Oracle
@@ -129,13 +136,13 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-### 3. Levantar la API
+### 5. Levantar la API en la consola de visual 
 ```bash
 python api.py
 ```
-en la parte de abajo aparecera el enlace del puerto al que esta conectado, tomarlo en cuenta para los siguientes pasos
+### en la parte de abajo aparecera el enlace del puerto al que esta conectado, tomarlo en cuenta para los siguientes pasos
 
-### 5. Probar en Postman
+### 6. Probar en Postman
 - abre postman en tu computadora si no lo tienes lo puedes descargar aca: Descargar postman desde [POSTMAN](https://www.postman.com/downloads/)
 - Seleccionar en new 
 - Seleccionar la opcion de HTTP
