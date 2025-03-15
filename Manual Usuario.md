@@ -168,5 +168,3 @@ python api.py
 ![](img/postman1.png)
 
 -luego seleccionar en SEND en el apartado derecho y debera aparecer que el usuario fue agregado con exito. esto se aplica para las demas peticiones en markdown.
-
-```markdown
