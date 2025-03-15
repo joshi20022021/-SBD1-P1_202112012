@@ -9,11 +9,11 @@
 ---
 
 # Para poder levantar el proyecto se requiere lo siguiente:
-## - Instalar Oracle Database XE
-## - Instalar SQL Developer
-## - Cargar la base de datos a SQL
-## - Levantar la API
-## - POSTMAN
+- Instalar Oracle Database XE
+- Instalar SQL Developer
+- Cargar la base de datos a SQL
+- Levantar la API
+- POSTMAN
 
 # Instalación y Configuración de Oracle Database XE, SQL Developer y API Flask
 
