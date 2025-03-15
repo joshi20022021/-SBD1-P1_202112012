@@ -7,3 +7,130 @@
 
 ## 🏥 **MANUAL DE USUARIO**  
 ---
+Para poder levantar el proyecto se requiere lo siguiente:
+-Instalar Oracle Database XE 
+-Instalar SQL Developer 
+-POSTMAN
+-Cargar la base de datos a SQL
+-levantar la API
+
+# Instalación y Configuración de Oracle Database XE, SQL Developer y API Flask
+
+## Instalación de Oracle Database XE en Docker
+
+### 1. Descargar la imagen de Oracle XE
+```bash
+docker pull container-registry.oracle.com/database/express:21.3.0-xe
+```
+
+### 2. Crear y ejecutar el contenedor
+```bash
+docker run -d --name oracle-xe \
+  -p 1521:1521 -p 5500:5500 \
+  -e ORACLE_PWD=oracle \
+  container-registry.oracle.com/database/express:21.3.0-xe
+```
+
+### 3. Verificar que el contenedor esté corriendo
+```bash
+docker ps
+```
+
+### 4. Conectarse al contenedor
+```bash
+docker exec -it oracle-xe sqlplus sys/oracle@//localhost:1521/XEPDB1 as sysdba
+```
+
+## Instalación de SQL Developer
+
+### 1. Descargar e instalar SQL Developer
+Descargar SQL Developer desde [Oracle SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
+
+### 2. Configurar conexión en SQL Developer
+- Abrir SQL Developer.
+- Crear una nueva conexión.
+  - **Nombre:** `oracle-xe`
+  - **Usuario:** `system`
+  - **Contraseña:** `oracle`
+  - **Host:** `localhost`
+  - **Puerto:** `1521`
+  - **SID/Service Name:** `XEPDB1`
+
+## Levantar la API con Flask y cx_Oracle
+
+### 1. Crear entorno virtual e instalar dependencias
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows usar: venv\Scripts\activate
+pip install flask cx_Oracle bcrypt
+```
+
+### 2. Configurar la conexión a Oracle en `db_connection.py`
+```python
+import cx_Oracle
+
+def get_connection():
+    dsn = cx_Oracle.makedsn("localhost", 1521, service_name="XEPDB1")
+    return cx_Oracle.connect(user="system", password="oracle", dsn=dsn)
+```
+
+### 3. Crear la API con Flask en `api.py`
+```python
+from flask import Flask, request, jsonify
+import cx_Oracle
+import bcrypt
+from db_connection import get_connection
+
+app = Flask(__name__)
+
+@app.route('/api/users', methods=['POST'])
+def create_user():
+    try:
+        data = request.json
+
+        hashed_password = bcrypt.hashpw(data["password"].encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+        conn = get_connection()
+        cursor = conn.cursor()
+        
+        insert_query = """
+        INSERT INTO Usuarios (Id_Usuario, Identificacion_Nacional, Nombre, Apellido, Telefono, Email, Contraseña, Activo, Correo_Confirmado, created_at, updated_at)
+        VALUES (usuario_seq.NEXTVAL, :1, :2, :3, :4, :5, :6, :7, :8, SYSTIMESTAMP, SYSTIMESTAMP)
+        """
+        
+        cursor.execute(insert_query, (
+            data["identificacion"], data["nombre"], data["apellido"], data["telefono"],
+            data["email"], hashed_password, data.get("activo", 1), data.get("correo_confirmado", 0)
+        ))
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+        
+        return jsonify({"status": "success", "message": "Usuario creado correctamente"}), 201
+
+    except cx_Oracle.DatabaseError as e:
+        return jsonify({"status": "error", "message": "Error en la base de datos", "details": str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+### 4. Levantar la API
+```bash
+python api.py
+```
+
+### 5. Probar en Postman
+- **POST** `http://127.0.0.1:5000/api/users`
+- **Body (JSON):**
+```json
+{
+    "identificacion": "12345678",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "telefono": "12345678",
+    "email": "juan@example.com",
+    "password": "claveSegura123"
+}
+```
+```markdown
