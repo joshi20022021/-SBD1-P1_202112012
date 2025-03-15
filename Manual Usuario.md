@@ -59,16 +59,26 @@ Descargar SQL Developer desde [Oracle SQL Developer](https://www.oracle.com/tool
 ### configuracion del servidor creado
 ![](img/sqlserver.png)
 
-### configuracion del servidor creado
-![](img/sqlserver.png)
-
 ### posteriormente se procede a cargar la base de datos en el apartado de PROYECTO1 
 ![](img/cargardb.png)
 
+### luego se presionar en el boton de una hoja y el boton de play para ejecutar el script de la base de datos
+![](img/ejecutardb.png)
+
+### en la parte izquierda se encuentra la base de datos del proyecto en donde se le da en la carpeta de tablas clic derecho
+y en refrescar para que puedan aparecer las tablas
+![](img/vertablas.png)
+
+### OJO(si aun no se cargaron todas las tablas hay que volver a seleccionar el boton de la hoja y el boton de play y nuevamente
+refrescar esto puede hacerse hasta que aparezcan todas las tablas con ello ya tendremos la base de datos funcional)
+![](img/tablasfin.png)
 
 ## Levantar la API con Flask y cx_Oracle
 
-### 1. Crear entorno virtual e instalar dependencias
+### Abrir visual studio code en tu sistema y aparecera de la siguiente manera
+![](img/visualapi.png)
+
+### 1. Crear entorno virtual e instalar dependencias en visual studio code 
 ```bash
 python -m venv venv
 source venv/bin/activate  # En Windows usar: venv\Scripts\activate
@@ -84,7 +94,7 @@ def get_connection():
     return cx_Oracle.connect(user="system", password="oracle", dsn=dsn)
 ```
 
-### 3. Crear la API con Flask en `api.py`
+### 3. buscar el archivo API.py tendra el siguiente codigo(se uso una parte como base)
 ```python
 from flask import Flask, request, jsonify
 import cx_Oracle
