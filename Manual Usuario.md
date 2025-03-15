@@ -9,21 +9,11 @@
 ---
 
 # Para poder levantar el proyecto se requiere lo siguiente:
-
 ## - Instalar Oracle Database XE
-![Oracle Database XE](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png)
-
 ## - Instalar SQL Developer
-![SQL Developer](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png)
-
 ## - Cargar la base de datos a SQL
-![SQL](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/800px-Sql_data_base_with_logo.png)
-
 ## - Levantar la API
-![API](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/API_icon.png/800px-API_icon.png)
-
 ## - POSTMAN
-![Postman](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Postman_%28software%29.png/800px-Postman_%28software%29.png)
 
 # Instalación y Configuración de Oracle Database XE, SQL Developer y API Flask
 
