@@ -37,12 +37,17 @@ Posteriormente se realizo la normalizacion de las tablas desde la forma 1FN hast
 
 
 ## Esquema Conceptual
+el analisis conceptual representa un boceto de las relaciones entre las entidades identificadas y ademas las agregadas para la normalizacion de las tablas representa un boceto de como se visualizara la DB.
+
 <img src="diagramas/conceptual.png" alt="Diagrama conceptual" width="1000" height="500" />
 
 ## Esquema Lógico
+El esquema logico representa las relaciones entre las tablas mas formal, se puede observar las relaciones 1:N, 1:M, 1:1 entre otros ademas se pueden observar los atributos que posee cada entidad sin embargo aun no esta visiblemente correcta dado que no se
+observan las llaves foraneas que surgen de las relaciones.
 <img src="diagramas/DiagramaLogico.png" alt="Diagrama logico" width="1000" height="600" />
 
 ## Esquema Físico
+Aca tenemos una vision clara del diseño de la base de datos con sus llaves foraneas por la dependencia de las tablas a traves de las relaciones, los atributos con sus tipos de datos para verificar que son correctos y acordes a lo que representan es la forma final de la base de datos y ademas normalizada.
 <img src="diagramas/DiagramaFisico.png" alt="Diagrama fisico" width="1000" height="600" />
 
 
@@ -355,7 +360,8 @@ Relación uno a muchos con Direccion (un usuario puede tener múltiples direccio
 | updated_at              | TIMESTAMP(0) |
 
 
-##Descripcion de las relaciones entre tablas
+##Descripcion general de las relaciones entre tablas de la base de datos
+
 | **Relación**                     | **Tipo** | **Descripción**                                                                 |
 |----------------------------------|----------|---------------------------------------------------------------------------------|
 | **Usuarios** ↔ **Direccion**      | 1:N      | Un usuario puede tener múltiples direcciones, pero cada dirección pertenece a un solo usuario. |
@@ -379,8 +385,6 @@ Relación uno a muchos con Direccion (un usuario puede tener múltiples direccio
 | **Productos** ↔ **ImagenProducto** | 1:N      | Un producto puede tener múltiples imágenes asociadas, pero cada imagen pertenece a un único producto. |
 
 ## Descripción de la API
-
-
 
 ## Descripción de los endpoints utilizados
 
