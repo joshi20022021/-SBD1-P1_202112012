@@ -157,7 +157,9 @@ en la parte de abajo aparecera el enlace del puerto al que esta conectado, tomar
 }
 ```
 -debe quedar de esta forma
+
 ![](img/postman1.png)
--luego seleccionar en SEND en el apartado derecho y debera aparecer que el usuario fue agregado con exito
+
+-luego seleccionar en SEND en el apartado derecho y debera aparecer que el usuario fue agregado con exito. esto se aplica para las demas peticiones en markdown.
 
 ```markdown
