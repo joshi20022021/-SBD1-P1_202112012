@@ -360,7 +360,7 @@ Relación uno a muchos con Direccion (un usuario puede tener múltiples direccio
 | updated_at              | TIMESTAMP(0) |
 
 
-##Descripcion general de las relaciones entre tablas de la base de datos
+## Descripcion general de las relaciones entre tablas de la base de datos
 
 | **Relación**                     | **Tipo** | **Descripción**                                                                 |
 |----------------------------------|----------|---------------------------------------------------------------------------------|
